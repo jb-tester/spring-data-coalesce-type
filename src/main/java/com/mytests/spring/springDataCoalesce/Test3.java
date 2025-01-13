@@ -20,4 +20,11 @@ public class Test3 {
     public Test3(String str) {
         this.str = str;
     }
+
+    @Override
+    public String toString() {
+        return "Test3{" +
+               "str='" + str + '\'' +
+               '}';
+    }
 }

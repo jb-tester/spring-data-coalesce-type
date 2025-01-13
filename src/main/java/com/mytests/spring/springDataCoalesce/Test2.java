@@ -19,4 +19,11 @@ public class Test2 {
     public Test2(Long aLong) {
         this.aLong = aLong;
     }
+
+    @Override
+    public String toString() {
+        return "Test2{" +
+               "aLong=" + aLong +
+               '}';
+    }
 }

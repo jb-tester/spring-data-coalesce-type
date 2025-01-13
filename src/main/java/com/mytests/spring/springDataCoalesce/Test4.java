@@ -19,4 +19,11 @@ public class Test4 {
     public void setaDouble(Double aDouble) {
         this.aDouble = aDouble;
     }
+
+    @Override
+    public String toString() {
+        return "Test4{" +
+               "aDouble=" + aDouble +
+               '}';
+    }
 }

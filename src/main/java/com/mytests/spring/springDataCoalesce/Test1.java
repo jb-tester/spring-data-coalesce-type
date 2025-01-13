@@ -21,4 +21,11 @@ public class Test1 {
     public void setBd(BigDecimal bd) {
         this.bd = bd;
     }
+
+    @Override
+    public String toString() {
+        return "Test1{" +
+               "bd=" + bd +
+               '}';
+    }
 }

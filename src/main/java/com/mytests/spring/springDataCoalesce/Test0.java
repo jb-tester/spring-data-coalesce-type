@@ -20,4 +20,11 @@ public class Test0 {
     public void setnum(Integer num) {
         this.num = num;
     }
+
+    @Override
+    public String toString() {
+        return "Test0{" +
+               "num=" + num +
+               '}';
+    }
 }
