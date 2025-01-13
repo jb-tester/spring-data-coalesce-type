@@ -18,6 +18,7 @@ public class Application {
             someEntityService.populateDB();
             someEntityService.testConstructors();
             System.out.println("--------------------------------------");
+           // someEntityService.testMetestOneArgCoalesce();
         };
     }
 }

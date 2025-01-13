@@ -20,8 +20,8 @@ public class SomeEntity extends BaseEntity {
         this.name = name;
     }
 
-    public SomeEntity(String name, BigDecimal bd, Long f) {
-        super( bd, f);
+    public SomeEntity(String name, BigDecimal bd, Long f, Double d) {
+        super( bd, f, d);
         this.name = name;
     }
 

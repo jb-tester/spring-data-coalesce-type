@@ -8,11 +8,12 @@ import java.math.BigDecimal;
 
 @MappedSuperclass
 public class BaseEntity {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Integer id;
 
 
-
+    Double aDouble;
     BigDecimal bd;
     Long aLong;
 
@@ -32,9 +33,18 @@ public class BaseEntity {
         this.aLong = aLong;
     }
 
-    public BaseEntity(BigDecimal bd, Long aLong) {
+    public Double getaDouble() {
+        return aDouble;
+    }
+
+    public void setaDouble(Double aDouble) {
+        this.aDouble = aDouble;
+    }
+
+    public BaseEntity(BigDecimal bd, Long aLong, Double aDouble) {
         this.bd = bd;
         this.aLong = aLong;
+        this.aDouble = aDouble;
     }
 
     public BaseEntity() {

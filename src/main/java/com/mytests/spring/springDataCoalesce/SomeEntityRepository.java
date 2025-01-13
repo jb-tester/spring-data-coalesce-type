@@ -11,7 +11,7 @@ import java.util.List;
 public interface SomeEntityRepository extends JpaRepository<SomeEntity, Long>, BaseRepository {
 
     // query with explicit entity:
-    // COALESCE(BIGDECIMAL) is considered to have LONG type
+    // COALESCE(BIGDECIMAL) is considered to have INT type
     @Query("""
            select
             new com.mytests.spring.springDataCoalesce.Test1(
@@ -29,4 +29,16 @@ public interface SomeEntityRepository extends JpaRepository<SomeEntity, Long>, B
            """)
     List<Test0> test00(@Param("arg") int arg);
 
+    // COALESCE(DOUBLE) is considered to have INT type
+    @Query("""
+           select
+            new com.mytests.spring.springDataCoalesce.Test4(
+                coalesce(ic.aDouble, :arg))
+           from SomeEntity ic
+           """)
+    List<Test4> test000(@Param("arg") Double arg);
+
+    // shouldn't work actually - single-argument coalesce
+    @Query("select e from SomeEntity e where coalesce(:args) is null or e.aDouble in :args")
+    List<SomeEntity> oneArgCoalesce(List<Double> args);
 }
