@@ -1,7 +1,10 @@
 package com.mytests.spring.springDataCoalesce;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
+import java.math.BigDecimal;
 
 public interface BaseRepository {
 
@@ -71,4 +74,7 @@ public interface BaseRepository {
            """)
     Test2 test3(@Param("userId") Long userId);
 */
+    @Modifying
+    @Query("insert into #{#entityName}(aLong, bd) values (:a, :b)")
+    void saveEntity(@Param("a") Long a, @Param("b") BigDecimal b);
 }
