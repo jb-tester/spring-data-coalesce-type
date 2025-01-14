@@ -38,7 +38,8 @@ public interface SomeEntityRepository extends JpaRepository<SomeEntity, Long>, B
            """)
     List<Test4> test000(@Param("arg") Double arg);
 
-    // shouldn't work actually - single-argument coalesce
+    // shouldn't work actually -
+    // single-argument coalesce
     @Query("select e from SomeEntity e where coalesce(:args) is null or e.aDouble in :args")
     List<SomeEntity> oneArgCoalesce(List<Double> args);
 }
